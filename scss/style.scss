@@ -6,120 +6,130 @@ body {
     background:$Light-Grayish-Blue;
     font-family: 'Manrope', sans-serif;
     font-size:1.3rem;
-    height:100vh;
+    min-height:100vh;
 }
 
 
 .main {
     background:$background-main;
-    border-radius:1rem;
-    box-shadow: 0px 0px 10px $Grayish-Blue;
+    box-shadow: 0px 40px 40px -10px rgba(201, 213, 225, 0.503415);
+    border-radius: 10px;
     position:relative;
-    width:80%;
+    width:32.7rem;
 }
 
 .image-crop {
     border-radius:1rem 1rem 0 0;
-    height:50vw;
-    overflow: hidden;
-}
-
-.article-image {
-    bottom:8%;
-    position:relative;
+    height:20rem;
+    width: 100%;
+    background:url(../images/drawers.jpg) no-repeat;
+    background-size: cover;
+    background-position-y:-17px;
 }
 
 .content {
 
-    position: relative;
+    padding:3.6rem 3.2rem 2rem;
 
     &__intro-text {
         color:$color-intro-text;
-        font-size:1.5rem;
+        font-size:1.6rem;
         font-weight: 700;
-        line-height:2rem;
-        padding:3rem;
-        padding-bottom:0;
+        line-height:2.4rem;
+        letter-spacing: 0.2px;
+        margin-bottom:1.2rem;
     }
 
     &__main-text {
         color:$color-main-text;
         line-height:2rem;
-        margin:1.5rem 0 2.5rem;
-        padding:0 3rem;
+        font-size: 1.3rem;
+        letter-spacing: 0.12px;
+        font-weight: 500;
+        margin-bottom: 3.2rem;
     }
-}
 
-.author {
-    @include flexCenter(row);
-    justify-content: space-between;
-    padding:0 3rem 3rem 2rem;
+    &__author {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
 
-    &__picture {
+    &__author-picture {
         border-radius:100%;
         width:40px;
+        margin-right: 1.6rem;
     }
 
-    &__name {
+    &__author-name {
         color:$color-intro-text;
         font-weight: 700;
+        font-size: 1.3rem;
+        letter-spacing: 0.12px;
+        line-height: 2rem;
     }
 
-    &__article-date {
+    &__author-date {
         color:$color-date;
+        font-size: 1.3rem;
+        letter-spacing: 0.12px;
+        line-height: 2rem;
     }
 
-    &__name-date {
+    &__wrapper-image {
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height:32px;
-        margin-left:-30%;
-    }
-
-    &__share-button {
+        align-items: center;
+        justify-content: center;
         background-color: $background-button;
         border-radius:100%;
-        padding:1rem;
+        width: 32px;
+        height: 32px;
+        margin-left:auto;
     }
 }
 
-.share-active {
-    @include flexCenter(row);
-    justify-content: space-between;
-
-    background:$background-link-active;
-    border-radius: 0 0 1rem 1rem;
-    padding:1.8rem 3rem;
-
+.share-block {
+    display: none;
+    align-items: center;
+    background: #48556A;
+    border-radius: 0px 0px 10px 10px;
+    padding: 1.6rem 3.2rem;
+    position:absolute;
+    bottom: 0;
+    width: 100%;
 
     &__text {
         color:$color-date;
-        display:inline-block;
         letter-spacing:0.5rem;
+        font-size: 1.3rem;
+        line-height: 2rem;
         text-transform: uppercase;
+        margin-right: 2.1rem;
+    }
+      
+    &__social-icon {
+        margin-right:1.6rem;
     }
 
-    &__social-icons {
-        display:inline-block;
-        margin-left:-4rem;
+    &__image-wrapper {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $Desaturated-Dark-Blue;
+        border-radius:100%;
+        width: 32px;
+        height: 32px;
     }
 
-    &__share-button-active {
-        background:#0b0c0c;
-        border-radius: 100%;
-        filter: brightness(10);
-        padding:1rem;
+    &__share-button {
+        filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(213deg) brightness(102%) contrast(102%);
     }
-
 }
 
-.social-icon + .social-icon {
-    margin-left:1rem;
+.share-block-visible {
+    display: flex;
 }
-    
-.attribution { font-size: 11px; text-align: center; margin-top:2rem;}
-.attribution a { color: hsl(228, 45%, 44%); }
 
 @media screen and (min-width:800px) {
     .main {
