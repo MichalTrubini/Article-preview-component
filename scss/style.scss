@@ -89,7 +89,9 @@ body {
 }
 
 .share-block {
-    display: none;
+    display: flex;
+    transition: opacity 0.5s;
+    opacity: 0;
     align-items: center;
     background: #48556A;
     border-radius: 0px 0px 10px 10px;
@@ -132,7 +134,8 @@ body {
 }
 
 .share-block-visible {
-    display: flex;
+    transition: opacity 0.5s;
+    opacity: 1;
 }
 
 @media screen and (min-width:768px) {
